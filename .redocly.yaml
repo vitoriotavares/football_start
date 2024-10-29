@@ -1,4 +1,4 @@
-organization: untitled_application
+organization: app_example_soccer_agency
 
 extends:
   - recommended

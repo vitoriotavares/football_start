@@ -1,7 +1,7 @@
 {
-  "name": "untitled-application",
+  "name": "app-example-soccer-agency",
   "version": "1.0.0",
-  "description": "Integrate Zapier with Untitled Application",
+  "description": "Integrate Zapier with App example soccer agency",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive -t 10000"
