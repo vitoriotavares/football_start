@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   # See `config/routes/*.rb` to customize these configurations.
   draw "concerns"
   draw "devise"
   draw "sidekiq"
   draw "avo"
+  draw "blog"
 
   # `collection_actions` is automatically super scaffolded to your routes file when creating certain objects.
   # This is helpful to have around when working with shallow routes and complicated model namespacing. We don't use this
@@ -66,6 +68,10 @@ Rails.application.routes.draw do
         namespace :integrations do
           # 🚅 super scaffolding will insert new integration installations above this line.
         end
+
+        resources :players
+        resources :agencies
+        resources :agents
       end
     end
   end

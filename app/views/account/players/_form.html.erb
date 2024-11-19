@@ -1,0 +1,23 @@
+<% cancel_path ||= player.persisted? ? [:account, player] : [:account, @team, :players] %>
+
+<%= form_with model: player, url: (player.persisted? ? [:account, player] : [:account, @team, :players]), local: true, class: 'form' do |form| %>
+  <%= render "shared/limits/form", form: form, cancel_path: cancel_path do %>
+    <%= render 'account/shared/forms/errors', form: form %>
+
+    <% with_field_settings form: form do %>
+      <%= render 'shared/fields/date_field', method: :birth_date, options: {autofocus: true} %>
+      <%= render 'shared/fields/text_field', method: :nationality %>
+      <%= render 'shared/fields/text_field', method: :position %>
+      <%= render 'shared/fields/number_field', method: :height %>
+      <%= render 'shared/fields/number_field', method: :weight %>
+      <%= render 'shared/fields/buttons', method: :skills, options: {multiple: true} %>
+      <%= render 'shared/fields/trix_editor', method: :description %>
+      <%# 🚅 super scaffolding will insert new fields above this line. %>
+    <% end %>
+
+    <div class="buttons">
+      <%= form.submit (form.object.persisted? ? t('.buttons.update') : t('.buttons.create')), class: "button" %>
+      <%= link_to t('global.buttons.cancel'), cancel_path, class: "button-secondary" %>
+    </div>
+  <% end %>
+<% end %>

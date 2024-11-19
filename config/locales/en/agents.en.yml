@@ -1,0 +1,100 @@
+en:
+  agents: &agents
+    label: &label Agents
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-write
+    buttons: &buttons
+      new: Add New Agent
+      create: Create Agent
+      edit: Edit Agent
+      update: Update Agent
+      destroy: Remove Agent
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{agent_name}? This will also remove any child resources and can't be undone.
+    agent:
+      buttons: *buttons
+    fields: &fields
+      id:
+        heading: Agent ID
+      team_id:
+        heading: Team ID
+      license_number:
+        _: &license_number License Number
+        label: *license_number
+        heading: *license_number
+        api_title: *license_number
+        api_description: *license_number
+      years_of_experience:
+        _: &years_of_experience Years Of Experience
+        label: *years_of_experience
+        heading: *years_of_experience
+        api_title: *years_of_experience
+        api_description: *years_of_experience
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Agents"
+      index: "List Agents"
+      create: "Add a New Agent"
+      member_actions: "Actions for an Individual Agent"
+      show: "Retrieve a Agent"
+      update: "Update a Agent"
+      destroy: "Delete a Agent"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Agents"
+      contexts:
+        team:
+          header: Agents
+          description: Below is a list of Agents that have been added for %{team_name}.
+          description_empty: No Agents have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{agent_name}"
+      header: Agent Details
+      description: Below are the details we have for %{agent_name}.
+      manage_description: You'll also find options for updating these details or removing %{agent_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Agent for %{team_name}"
+      header: New Agent Details
+      description: Please provide the details of the new Agent you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{agent_name}"
+      header: Edit Agent Details
+      description: You can update the details or settings for %{agent_name} below.
+      form: *form
+    notifications:
+      created: Agent was successfully created.
+      updated: Agent was successfully updated.
+      destroyed: Agent was successfully destroyed.
+  account:
+    agents: *agents
+  activerecord:
+    attributes:
+      agent:
+        license_number: *license_number
+        years_of_experience: *years_of_experience
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at

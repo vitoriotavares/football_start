@@ -1,0 +1,1 @@
+get "blog/index"

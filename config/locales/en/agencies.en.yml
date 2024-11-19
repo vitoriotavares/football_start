@@ -1,0 +1,121 @@
+en:
+  agencies: &agencies
+    label: &label Agencies
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-bag
+    buttons: &buttons
+      new: Add New Agency
+      create: Create Agency
+      edit: Edit Agency
+      update: Update Agency
+      destroy: Remove Agency
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{agency_name}? This will also remove any child resources and can't be undone.
+    agency:
+      buttons: *buttons
+    fields: &fields
+      id:
+        heading: Agency ID
+      team_id:
+        heading: Team ID
+      name:
+        _: &name Name
+        label: *name
+        heading: *name
+        api_title: *name
+        api_description: *name
+      location:
+        _: &location Location
+        label: *location
+        heading: *location
+        api_title: *location
+        api_description: *location
+      position:
+        _: &position Position
+        label: *position
+        heading: *position
+        api_title: *position
+        api_description: *position
+      contact_info:
+        _: &contact_info Contact Info
+        label: *contact_info
+        heading: *contact_info
+        api_title: *contact_info
+        api_description: *contact_info
+      license_number:
+        _: &license_number License Number
+        label: *license_number
+        heading: *license_number
+        api_title: *license_number
+        api_description: *license_number
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Agencies"
+      index: "List Agencies"
+      create: "Add a New Agency"
+      member_actions: "Actions for an Individual Agency"
+      show: "Retrieve a Agency"
+      update: "Update a Agency"
+      destroy: "Delete a Agency"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Agencies"
+      contexts:
+        team:
+          header: Agencies
+          description: Below is a list of Agencies that have been added for %{team_name}.
+          description_empty: No Agencies have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{agency_name}"
+      header: Agency Details
+      description: Below are the details we have for %{agency_name}.
+      manage_description: You'll also find options for updating these details or removing %{agency_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Agency for %{team_name}"
+      header: New Agency Details
+      description: Please provide the details of the new Agency you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{agency_name}"
+      header: Edit Agency Details
+      description: You can update the details or settings for %{agency_name} below.
+      form: *form
+    notifications:
+      created: Agency was successfully created.
+      updated: Agency was successfully updated.
+      destroyed: Agency was successfully destroyed.
+  account:
+    agencies: *agencies
+  activerecord:
+    attributes:
+      agency:
+        name: *name
+        location: *location
+        position: *position
+        contact_info: *contact_info
+        license_number: *license_number
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at

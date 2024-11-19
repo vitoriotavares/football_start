@@ -450,6 +450,10 @@ GEM
     omniauth (1.9.2)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
+    omniauth-google-oauth2 (0.8.0)
+      jwt (>= 2.0)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
     omniauth-oauth2 (1.7.3)
       oauth2 (>= 1.4, < 3)
       omniauth (>= 1.9, < 3)
@@ -753,6 +757,7 @@ DEPENDENCIES
   magic_test
   minitest-reporters
   minitest-retry
+  omniauth-google-oauth2
   pagy (< 7)
   pg (>= 0.18, < 2.0)
   postmark-rails

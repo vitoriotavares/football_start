@@ -1,5 +1,8 @@
 default:
   models:
+    Agent: read
+    Agency: read
+    Player: read
     Team: read
     Membership:
       - read
@@ -28,6 +31,9 @@ admin:
     - admin
     - editor
   models:
+    Agent: manage
+    Agency: manage
+    Player: manage
     Team: manage
     Membership: manage
     Scaffolding::AbsolutelyAbstract::CreativeConcept: manage
